@@ -1,9 +1,5 @@
-(;
-  Techincally this code is not correct.
-  In real world fd_write may not be able to write whole buffer to file at single try.
-  So *real* code shout call fd_write in loop, untill all data is wrtitten.
-  But "Hello world!\n" string is short enouth to be fully written with one call in almost all cases.
-;)
+;; Compile: wat2wasm hello-world.wat
+;; Run:     wasmer run hello-world.wasm
 (module
   (import "wasi_snapshot_preview1" "proc_exit" (func $exit (param i32)))
   (import "wasi_snapshot_preview1" "fd_write" (func $fd_write 
@@ -16,6 +12,12 @@
   (memory (export "memory") 1)
   ;; Put text in memory at 0 offset
   (data (i32.const 0) "Hello world!\n")
+  (;
+    Techincally this code is not correct.
+    In real world fd_write may not be able to write whole buffer to file at a single try.
+    So *real* code should call fd_write in loop, untill all data is wrtitten.
+    But "Hello world!\n" string is short enouth to be fully written with one call in almost all cases.
+  ;)
   (func $main (export "_start")
     ;; Set up iovec structure with offset 13
     ;; - iov_base offset 0 (13+0)

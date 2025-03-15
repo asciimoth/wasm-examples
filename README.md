@@ -32,7 +32,7 @@ A complete novice writes Wasm by hand series:
 - [Parsing Numbers](https://burgers.io/complete-novice-wasm-parsing-numbers)
 - [Adding an Allocator](https://burgers.io/complete-novice-wasm-allocator)
   
-[Writing GamOfLife in WASM](https://blog.scottlogic.com/2018/04/26/webassembly-by-hand.html)
+[Writing GameOfLife in WASM](https://blog.scottlogic.com/2018/04/26/webassembly-by-hand.html)
   
 [wabt.js](https://www.npmjs.com/package/wabt) - library to compile wat to wasm right in your js code without invoking external tools
   
