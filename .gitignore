@@ -2,3 +2,4 @@
 /local
 /.direnv
 *.wasm
+node_modules
