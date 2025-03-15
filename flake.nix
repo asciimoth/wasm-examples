@@ -29,6 +29,7 @@
           pkgs.wasmer
           pkgs.wasm-tools
           pkgs.wabt
+          pkgs.nodejs
         ];
       };
     });

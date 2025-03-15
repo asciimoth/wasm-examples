@@ -11,7 +11,7 @@ Use [run](./run) script to build and run `*.wat` files.
 run hello-world
 ```
 ## Useful links
-[WAT Spec](https://webassembly.github.io/spec/core/text/index.html)
+[WAT Spec](https://webassembly.github.io/spec/core/text/index.html)  
 [WASM Semantics](https://webassembly.github.io/spec/core/exec/index.html)
 
 MDN:

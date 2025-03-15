@@ -1,0 +1,23 @@
+{
+  "name": "wasm-wasi-examples",
+  "version": "1.0.0",
+  "description": "Some small demos written by hand in wat ([wasm](https://en.wikipedia.org/wiki/WebAssembly) text format) to explore [wasi](https://wasi.dev/interfaces) system interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asciimoth/wasm-wasi-examples.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asciimoth/wasm-wasi-examples/issues"
+  },
+  "homepage": "https://github.com/asciimoth/wasm-wasi-examples#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
