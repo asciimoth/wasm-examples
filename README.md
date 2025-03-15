@@ -1,14 +1,27 @@
-# wasm-wasi-examples
-Some small demos written by hand in wat ([wasm](https://en.wikipedia.org/wiki/WebAssembly) text format) to explore [wasi](https://wasi.dev/interfaces) system interface
+# wasm-examples
+Some small demos written by hand in wat ([WASM](https://en.wikipedia.org/wiki/WebAssembly) text format) to explore 
+
+## Repo structure
+- [wasm](./wasm/) - small examples in pure wasm. Additional code (js) needed to laod and run them.
+- [wasm-wasi](./wasm-wasi/) - wasm programs that can be executed via runtime with [WASI](https://wasi.dev/interfaces) system interface support (e.g. [wasmer](https://github.com/wasmerio/wasmer)).
 
 ## Requirements
 - [wabt](https://github.com/WebAssembly/wabt) to compile `*.wat` source codes to binary `*.wasm` progs
-- [wasmer](https://github.com/wasmerio/wasmer) to run compiled `*.wasm` files with wasi interface available
+- [wasmer](https://github.com/wasmerio/wasmer) to run compiled `*.wasm` files with [WASI](https://wasi.dev/interfaces) interface
+- (optional) [nodejs](https://nodejs.org) to run tests
+  
+There is also [nix flake](./flake.nix) with all needed
 
-## Run 
-Use [run](./run) script to build and run `*.wat` files.
+## Run
+## Tests
 ```sh
-run hello-world
+npm test
+```
+
+## wasm-wasi
+To run [wasm-wasi](./wasm-wasi/) examples, use [run](./wasm-wasi/run) script to build and run `*.wat` files.
+```sh
+wasm-wasi/run wasm-wasi/hello-world
 ```
 ## Useful links
 [WAT Spec](https://webassembly.github.io/spec/core/text/index.html)  

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Build *.wat file and run with wasmer
+# Usage: ./run hello-world
+
+WAT="$1.wat"
+WASM="$1.wasm"
+
+# If $WAT last time edit was later than $WASM's one
+if [ "$WAT" -nt "$WASM" ]; then
+  wat2wasm "$WAT" -o "$WASM"
+fi
+
+wasmer run "$WASM"

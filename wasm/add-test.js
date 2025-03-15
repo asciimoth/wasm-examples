@@ -2,7 +2,7 @@ const loader = require('../loader');
 
 console.log(loader);
 
-describe('Bar module', () => {
+describe('Add fn', () => {
   test('Summ numbers', async () => {
     const { instance } = await loader.loadwasm(__filename, __dirname);
 
