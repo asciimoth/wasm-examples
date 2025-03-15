@@ -4,7 +4,12 @@
   "description": "Some small demos written by hand in wat ([wasm](https://en.wikipedia.org/wiki/WebAssembly) text format) to explore [wasi](https://wasi.dev/interfaces) system interface",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "./builder && jest"
+  },
+  "jest": {
+    "testMatch": [
+      "**/*-test.js"
+    ]
   },
   "repository": {
     "type": "git",

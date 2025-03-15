@@ -1,3 +1,6 @@
 #!/bin/bash
 
+# Build *.wat file and run with wasmer
+# Usage: run foo/bar.wat
+
 wat2wasm "$1.wat" && wasmer run "$1.wasm"
