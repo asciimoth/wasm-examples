@@ -1,0 +1,87 @@
+- [ ] wasm
+    - [ ] nop
+    - [X] return const
+    - [X] simple math
+    - [X] bitwise math
+        - endiannes
+        - bool functions
+        - bitshifts
+        - popcount
+    - [ ] floating point math
+    - [ ] type conversions
+    - [ ] v128
+    - [ ] comparsions
+    - [ ] select
+    - [ ] vars
+        - global
+        - local
+            - implement select (sort of) - function that get 3 args and return one of them by id from first arg
+    - [ ] functions
+        - multiple return values
+        - direct call
+        - drop
+        - import functions
+        - start function
+    - [ ] memory
+        - load, store
+        - data segments
+            - overlapping
+            - passive data
+        - get mem size
+        - grow
+        - builtin bulk memory operations
+    - [ ] function tables
+        - sort
+            - multiple comparators
+            - multiple sort algos
+    - [ ] flow control
+        - if, else, end
+        - return values
+        - unreachable
+    - [ ] loops, blocks
+        - return values
+        - labels
+    - [ ] hand-written memory opts
+        - copy
+        - fill
+    - [ ] C-like strings
+        - get length
+        - copy
+        - concat
+        - lower
+        - upper
+    - [ ] parse and format ints
+    - [ ] parse and format floats
+    - [ ] hex
+    - [ ] base32
+    - [ ] base64
+    - [ ] some simple hash calc (md5 ?)
+    - [ ] allocators
+        - bump
+        - arena
+        - etc
+    - [ ] list / queue
+    - [ ] double linked list / dequeue
+    - [ ] hash map
+- [ ] wasi
+    - [ ] do nothing
+    - [ ] just exit code
+    - [X] hello world
+    - [ ] draw serpinski triangle
+    - [ ] print fib nombers
+    - [ ] echo (mirror stdin to stdout)
+    - [ ] print self args
+    - [ ] print env vars
+    - [ ] braile game of life
+    - [ ] mineswipper
+    - [ ] chess
+    - [ ] render 3d frame geometry
+    - [ ] raytrace rendering (donut)
+    - [ ] qr code generator
+    - [ ] simple FORT interpretter
+    - [ ] tcp echo
+    - [ ] simple http 1.0 server
+    - [ ] irc chat
+    - [ ] x11 hello world
+    - [ ] x11 eyes
+- [ ] orca
