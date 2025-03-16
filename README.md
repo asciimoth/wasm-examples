@@ -1,5 +1,5 @@
 # wasm-examples
-Some small demos written by hand in wat ([WASM](https://en.wikipedia.org/wiki/WebAssembly) text format) to explore 
+Some small demos written by hand to explore [WASM](https://en.wikipedia.org/wiki/WebAssembly)
 
 ## Repo structure
 - [wasm](./wasm/) - small examples in pure wasm. Additional code (js) needed to laod and run them.
@@ -25,7 +25,8 @@ wasm-wasi/run wasm-wasi/hello-world
 ```
 ## Useful links
 [WAT Spec](https://webassembly.github.io/spec/core/text/index.html)  
-[WASM Semantics](https://webassembly.github.io/spec/core/exec/index.html)
+[WASM Semantics](https://webassembly.github.io/spec/core/exec/index.html)  
+[Index of instructions](https://webassembly.github.io/spec/core/appendix/index-instructions.html)
 
 MDN:
 - [WASM Concepts](https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts)
@@ -45,6 +46,10 @@ A complete novice writes Wasm by hand series:
 - [Parsing Numbers](https://burgers.io/complete-novice-wasm-parsing-numbers)
 - [Adding an Allocator](https://burgers.io/complete-novice-wasm-allocator)
   
+[coderundebug's WAT series](https://coderundebug.com/learn/wat/introduction/#web-assembly)
+- [WAT reference](https://coderundebug.com/learn/wat-reference/modules/#variables)
+- [i32 operations](https://coderundebug.com/learn/wat-reference/i32/#i32-math)
+
 [Writing GameOfLife in WASM](https://blog.scottlogic.com/2018/04/26/webassembly-by-hand.html)
   
 [wabt.js](https://www.npmjs.com/package/wabt) - library to compile wat to wasm right in your js code without invoking external tools
