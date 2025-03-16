@@ -26,7 +26,7 @@ wasm-wasi/run wasm-wasi/hello-world
 ## Useful links
 [WAT Spec](https://webassembly.github.io/spec/core/text/index.html)  
 [WASM Semantics](https://webassembly.github.io/spec/core/exec/index.html)  
-[Index of instructions](https://webassembly.github.io/spec/core/appendix/index-instructions.html)
+[Index of instructions](https://webassembly.github.io/spec/core/appendix/index-instructions.html)  
 
 MDN:
 - [WASM Concepts](https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts)
