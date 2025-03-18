@@ -1,6 +1,6 @@
 const loader = require('../loader');
 
-describe('Add fn', () => {
+describe('Math', () => {
   test('Summ numbers', async () => {
     const { instance } = await loader.loadwasm(__filename, __dirname);
 

@@ -2,11 +2,7 @@
     - [X] nop
     - [X] return const
     - [X] simple math
-    - [ ] bitwise math
-        - endiannes
-        - bool functions
-        - bitshifts
-        - popcount
+    - [X] bitwise math
     - [ ] comparsions
     - [ ] floating point math
     - [ ] type conversions
@@ -41,7 +37,8 @@
     - [ ] loops, blocks
         - return values
         - labels
-    - [ ] hand-written memory opts
+    - [ ] endianness conversions
+    - [ ] hand-written memory ops
         - copy
         - fill
     - [ ] C-like strings
@@ -50,6 +47,9 @@
         - concat
         - lower
         - upper
+        - iteration over rows
+        - iteration over words
+    - [ ] json pretty print
     - [ ] parse and format ints
     - [ ] parse and format floats
     - [ ] hex
@@ -73,15 +73,17 @@
     - [ ] print self args
     - [ ] print env vars
     - [ ] braile game of life
+    - [ ] markovs chains based trash generator
     - [ ] mineswipper
     - [ ] chess
-    - [ ] render 3d frame geometry
     - [ ] raytrace rendering (donut)
     - [ ] qr code generator
     - [ ] simple FORT interpretter
+    - [ ] simple file compressor
     - [ ] tcp echo
     - [ ] simple http 1.0 server
     - [ ] irc chat
     - [ ] x11 hello world
     - [ ] x11 eyes
+    - [ ] x11 render 3d frame geometry
 - [ ] orca
