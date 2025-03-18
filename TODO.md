@@ -1,16 +1,16 @@
 - [ ] wasm
-    - [ ] nop
+    - [X] nop
     - [X] return const
     - [X] simple math
-    - [X] bitwise math
+    - [ ] bitwise math
         - endiannes
         - bool functions
         - bitshifts
         - popcount
+    - [ ] comparsions
     - [ ] floating point math
     - [ ] type conversions
     - [ ] v128
-    - [ ] comparsions
     - [ ] select
     - [ ] vars
         - global
