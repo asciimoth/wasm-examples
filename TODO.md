@@ -3,9 +3,10 @@
     - [X] return const
     - [X] simple math
     - [X] bitwise math
-    - [ ] comparsions
+    - [X] comparsions
     - [ ] floating point math
     - [ ] type conversions
+        - endianness conversions
     - [ ] v128
     - [ ] select
     - [ ] vars
@@ -26,10 +27,6 @@
         - get mem size
         - grow
         - builtin bulk memory operations
-    - [ ] function tables
-        - sort
-            - multiple comparators
-            - multiple sort algos
     - [ ] flow control
         - if, else, end
         - return values
@@ -37,7 +34,10 @@
     - [ ] loops, blocks
         - return values
         - labels
-    - [ ] endianness conversions
+    - [ ] function tables
+        - sort
+            - multiple comparators
+            - multiple sort algos
     - [ ] hand-written memory ops
         - copy
         - fill
