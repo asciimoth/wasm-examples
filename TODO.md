@@ -41,6 +41,7 @@
     - [ ] hand-written memory ops
         - copy
         - fill
+    - [ ] trigomometry functions
     - [ ] C-like strings
         - get length
         - copy
@@ -70,6 +71,7 @@
     - [ ] draw serpinski triangle
     - [ ] print fib nombers
     - [ ] echo (mirror stdin to stdout)
+    - [ ] stdin capitalaser
     - [ ] print self args
     - [ ] print env vars
     - [ ] braile game of life
@@ -78,6 +80,7 @@
     - [ ] chess
     - [ ] raytrace rendering (donut)
     - [ ] qr code generator
+    - [ ] MIDI Player
     - [ ] simple FORT interpretter
     - [ ] simple file compressor
     - [ ] tcp echo
