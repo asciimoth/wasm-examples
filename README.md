@@ -59,3 +59,4 @@ Examples:
 - [fibonacci](https://github.com/dominictarr/fib.wasm)
 - [raw wasm demos](https://github.com/binji/raw-wasm)
 
+[Nondeterminism in WebAssembly](https://github.com/WebAssembly/design/blob/main/Nondeterminism.md)
