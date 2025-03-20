@@ -4,7 +4,7 @@
     - [X] simple math
     - [X] bitwise math
     - [X] comparsions
-    - [ ] floating point math
+    - [X] floating point math
     - [ ] type conversions
         - endianness conversions
     - [ ] v128
