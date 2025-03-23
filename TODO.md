@@ -5,7 +5,7 @@
     - [X] bitwise math
     - [X] comparsions
     - [X] floating point math
-    - [ ] type conversions
+    - [X] type conversions
     - [ ] v128
     - [ ] select
     - [ ] vars
