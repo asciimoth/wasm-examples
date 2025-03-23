@@ -34,5 +34,7 @@ describe('Math', () => {
     expect(instance.exports.divsi32(10, 2)).toBe(5);
     expect(instance.exports.divsi32(10, 3)).toBe(3);
     expect(instance.exports.divsi32(11, 3)).toBe(3);
+
+    expect(() => { instance.exports.divsi32(11, 0) }).toThrow("divide by zero");
   });
 });
