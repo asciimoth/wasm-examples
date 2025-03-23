@@ -6,7 +6,6 @@
     - [X] comparsions
     - [X] floating point math
     - [ ] type conversions
-        - endianness conversions
     - [ ] v128
     - [ ] select
     - [ ] vars
@@ -64,6 +63,12 @@
     - [ ] list / queue
     - [ ] double linked list / dequeue
     - [ ] hash map
+- [ ] wasm4
+    - Life
+    - Serpinski triangle
+    - foo25 ecosystem simuation
+    - soft body physics simulation
+    - planetar gravity 2d
 - [ ] wasi
     - [ ] do nothing
     - [ ] just exit code
