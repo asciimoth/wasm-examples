@@ -8,7 +8,7 @@
         - [ ] comparsions
     - [X] type conversions
     - [ ] drop
-    - [ ] v128
+    - [X] v128
     - [ ] select
     - [ ] vars
         - global
