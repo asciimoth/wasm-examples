@@ -50,6 +50,17 @@ A complete novice writes Wasm by hand series:
 - [WAT reference](https://coderundebug.com/learn/wat-reference/modules/#variables)
 - [i32 operations](https://coderundebug.com/learn/wat-reference/i32/#i32-math)
 
+[dkwr blog wasm posts](https://blog.dkwr.de/)
+- [Wasm: A technical view](https://blog.dkwr.de/development/wasm-technical-view/)
+- [Dive into Wasm: Functions](https://blog.dkwr.de/development/wasm-functions/)
+- [Writing Wasm: modules](https://blog.dkwr.de/development/wasm-modules/)
+- [Dive into Wasm: Control flow instructions](https://blog.dkwr.de/development/wasm-control-flow/)
+- [Accessing and storing to memory in Wasm](https://blog.dkwr.de/development/wasm-memory/)
+- [Wasm variable instructions](https://blog.dkwr.de/development/wasm-variable-instructions/)
+- [Step by step towards wasm tables](https://blog.dkwr.de/development/wasm-tables/)
+- [Wasm: SIMD operations](https://blog.dkwr.de/development/wasm-simd-operations/)
+- [Wasm: The Garbage Collection proposal](https://blog.dkwr.de/development/wasm-gc-why/)
+
 [Writing GameOfLife in WASM](https://blog.scottlogic.com/2018/04/26/webassembly-by-hand.html)
   
 [wabt.js](https://www.npmjs.com/package/wabt) - library to compile wat to wasm right in your js code without invoking external tools
