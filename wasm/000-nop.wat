@@ -8,7 +8,10 @@
     nop
     nop
     nop
+    ;; If you curious why nop op exists, check rationale:
+    ;; https://github.com/WebAssembly/design/blob/main/Rationale.md#nop
   )
+
   ;; Function may be explicitly export to become callable from outer world
   (export "doNothing" (func $nothing))
 )
