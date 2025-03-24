@@ -5,7 +5,6 @@
     - [X] bitwise math
     - [X] comparsions
     - [X] floating point math
-        - [ ] comparsions
     - [X] type conversions
     - [X] drop
     - [X] v128

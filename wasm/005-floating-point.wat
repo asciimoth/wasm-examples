@@ -89,4 +89,7 @@
     ;; copysign(4.2, -6.9) => -4.2
     (f64.copysign (local.get 0) (local.get 1))
   )
+
+  ;; There is also eq, ne, gt, ge, lt, and le operatons for both f32 and f64
+  ;; types that works same like ones for i32 and i64.
 )
