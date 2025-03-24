@@ -5,7 +5,9 @@
     - [X] bitwise math
     - [X] comparsions
     - [X] floating point math
+        - [ ] comparsions
     - [X] type conversions
+    - [ ] drop
     - [ ] v128
     - [ ] select
     - [ ] vars
@@ -15,7 +17,6 @@
     - [ ] functions
         - multiple return values
         - direct call
-        - drop
         - import functions
         - start function
     - [ ] memory
