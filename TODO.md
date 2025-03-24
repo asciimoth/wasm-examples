@@ -33,6 +33,7 @@
     - [ ] loops, blocks
         - return values
         - labels
+    - [ ] type definitions ?
     - [ ] function tables
         - sort
             - multiple comparators
@@ -40,6 +41,7 @@
     - [ ] hand-written memory ops
         - copy
         - fill
+    - [ ] fib
     - [ ] trigomometry functions
     - [ ] C-like strings
         - get length
@@ -47,6 +49,7 @@
         - concat
         - lower
         - upper
+        - reverse
         - iteration over rows
         - iteration over words
     - [ ] json pretty print
@@ -63,6 +66,12 @@
     - [ ] list / queue
     - [ ] double linked list / dequeue
     - [ ] hash map
+    - [ ] Extensions
+        - [ ] Tail Calls
+        - [ ] Threads
+        - [ ] GC
+        - [ ] Exceptions
+        - [ ] memory 64
 - [ ] wasm4
     - Life
     - Serpinski triangle
