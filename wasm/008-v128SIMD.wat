@@ -1,4 +1,4 @@
-;; TODO: Move this example AFTER variables example and drop example
+;; TODO: Move this example AFTER variables, functions and drop examples
 (module
     ;; Single Instruction Multiple Data in general is a type of instructions
     ;; that operates on multiple sets of values at same time (multiple data)

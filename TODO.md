@@ -7,7 +7,7 @@
     - [X] floating point math
         - [ ] comparsions
     - [X] type conversions
-    - [ ] drop
+    - [X] drop
     - [X] v128
     - [ ] select
     - [ ] vars
