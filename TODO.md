@@ -8,7 +8,7 @@
     - [X] type conversions
     - [X] drop
     - [X] v128
-    - [ ] select
+    - [X] select
     - [ ] vars
         - global
         - local
