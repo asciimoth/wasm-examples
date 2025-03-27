@@ -13,21 +13,18 @@
     - [X] functions
     - [X] memory
     - [X] Sharing
-    - [ ] flow control
-        - if, else, end
-        - return values
-        - unreachable
+    - [X] flow control
     - [ ] loops, blocks
         - return values
         - labels
+        - hand-written memory ops
+            - copy
+            - fill
     - [ ] function tables
         - drop
         - sort
             - multiple comparators
             - multiple sort algos
-    - [ ] hand-written memory ops
-        - copy
-        - fill
     - [ ] fib
     - [ ] trigonometry functions
     - [ ] C-like strings
