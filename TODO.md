@@ -10,11 +10,7 @@
     - [X] v128
     - [X] select
     - [X] vars
-    - [ ] functions
-        - multiple return values
-        - direct call
-        - import functions
-        - start function
+    - [X] functions
     - [ ] memory
         - load, store
         - data segments
