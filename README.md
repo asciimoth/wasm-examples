@@ -2,7 +2,7 @@
 Some small demos written by hand to explore [WASM](https://en.wikipedia.org/wiki/WebAssembly)
 
 ## Repo structure
-- [wasm](./wasm/) - small examples in pure wasm. Additional code (js) needed to laod and run them.
+- [wasm](./wasm/) - small examples in pure wasm. Additional code (js) needed to load and run them.
 - [wasm-wasi](./wasm-wasi/) - wasm programs that can be executed via runtime with [WASI](https://wasi.dev/interfaces) system interface support (e.g. [wasmer](https://github.com/wasmerio/wasmer)).
 
 ## Requirements
@@ -10,7 +10,7 @@ Some small demos written by hand to explore [WASM](https://en.wikipedia.org/wiki
 - [wasmer](https://github.com/wasmerio/wasmer) to run compiled `*.wasm` files with [WASI](https://wasi.dev/interfaces) interface
 - (optional) [nodejs](https://nodejs.org) to run tests
   
-There is also [nix flake](./flake.nix) with all needed
+There is also [nix flake](./flake.nix) with everything needed
 
 ## Run
 ## Tests

@@ -1,7 +1,7 @@
 (module
-    ;; Globals must haave init value
+    ;; Globals must have init value
     (global $global1 (mut i32) (i32.const 101))
-    ;; Gloabals can be exported just like functions
+    ;; Globals can be exported just like the functions
     (global $global2 (export "glob2") (mut i32) (i32.const 404))
 
     (func (export "g1set") (param i32)
@@ -25,7 +25,7 @@
 
     (func (export "mul") (param i32 i32 i32) (result i32)
         ;; Function params are local variables (as you know from prev examples)
-        ;; But you can also create any ammount of additional function-local vars
+        ;; But you can also create any amount of additional function-local vars
         ;; of any type (i32, i64, f32, f64, v128)
         (local $somename i32)
         local.get 0

@@ -1,8 +1,8 @@
 (module
     (import "import" "glob" (global $glob (mut i32)))
-    ;; Whe should mark imported memory as "shared" to allow simultaneous access
-    ;; from multiple modules.
-    ;; Also shared memory must have max size
+    ;; We should mark imported memory as "shared" to allow simultaneous access
+    ;; from multiple modules
+    ;; Also the shared memory must have a max size
     (import "import" "mem" (memory 1 1 shared))
 
     (func (export "load") (param $offset i32) (result i32)
