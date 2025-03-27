@@ -12,10 +12,7 @@
     - [X] vars
     - [X] functions
     - [X] memory
-    - [ ] Sharing
-        - globals
-        - memory
-        - functions
+    - [X] Sharing
     - [ ] flow control
         - if, else, end
         - return values
