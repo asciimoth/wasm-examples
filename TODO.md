@@ -11,14 +11,7 @@
     - [X] select
     - [X] vars
     - [X] functions
-    - [ ] memory
-        - load, store
-        - data segments
-            - overlapping
-            - passive data
-        - get mem size
-        - grow
-        - builtin bulk memory operations
+    - [X] memory
     - [ ] Sharing
         - globals
         - memory
@@ -31,6 +24,7 @@
         - return values
         - labels
     - [ ] function tables
+        - drop
         - sort
             - multiple comparators
             - multiple sort algos
@@ -63,6 +57,7 @@
     - [ ] double linked list / dequeue
     - [ ] hash map
     - [ ] Extensions
+        - [ ] Multi-memory
         - [ ] Tail Calls
         - [ ] Threads
         - [ ] GC
