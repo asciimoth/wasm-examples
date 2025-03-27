@@ -1,21 +1,21 @@
-;; There are two floating point types in  wasm: f32 and f64
+;; There are two floating point types in WASM: f32 and f64
 ;; Both are signed (ofc)
-;; Both are corresponds to IEEE 754
+;; Both correspond to IEEE 754
 ;;   https://ieeexplore.ieee.org/document/8766229
 
-;; All examples in this file works same for f32
+;; All examples in this file work the same for f32
 
-;; If you feel confused about floats math and its quirks, check this:
+;; If you feel confused about floats' math and its quirks, check this:
 ;; https://matloka.com/blog/floating-point-101
 (module
-  ;; const ops work same for floating numbers as for integers
+  ;; const ops work the same for floating numbers as for integers
   (func (export "constDec") (result f64)
     f64.const 42.42
   )
   (func (export "constHex") (result f64)
     f64.const -0x2A.6B851EB851EB851EB852
   )
-  (func (export "constDecExpoent") (result f64)
+  (func (export "constDecExponent") (result f64)
     f64.const 42_000.5e-3
   )
   (func (export "constInf") (result f64)
@@ -90,6 +90,6 @@
     (f64.copysign (local.get 0) (local.get 1))
   )
 
-  ;; There is also eq, ne, gt, ge, lt, and le operatons for both f32 and f64
-  ;; types that works same like ones for i32 and i64.
+  ;; There is also eq, ne, gt, ge, lt, and le operations for both f32 and f64
+  ;; types that work the same like the ones for i32 and i64.
 )

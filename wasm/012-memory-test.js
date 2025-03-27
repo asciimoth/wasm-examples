@@ -41,7 +41,7 @@ describe('Memory', () => {
 
         instance.exports.drop();
 
-        // We cannot access passive data segment after drop.
+        // We cannot access passive data segment after we drop it
         expect(() => { instance.exports.init(5, 0, 5)  })
             .toThrow("memory access out of bounds");
     });
@@ -71,7 +71,7 @@ describe('Memory', () => {
     test('MemSize', async () => {
         const { instance } = await loader.loadwasm(__filename, __dirname);
 
-        // Initial mem size after module loaded is one page
+        // The initial mem size after module has loaded is one page long
         expect(new Uint8Array(instance.exports.mem.buffer).length).toBe(1*65536);
         expect(instance.exports.getMemSize()).toBe(1);
 
@@ -81,14 +81,14 @@ describe('Memory', () => {
         // Request five more pages
         expect(instance.exports.growMem(5)).toBe(3)
 
-        // Now mem size is eight pages
+        // Now the mem size is eight pages long
         expect(new Uint8Array(instance.exports.mem.buffer).length).toBe(8*65536);
         expect(instance.exports.getMemSize()).toBe(8);
 
-        // Reques too much pagess
+        // Request too much pages
         expect(instance.exports.growMem(2147483647)).toBe(-1) // -1 - means fail
 
-        // There is still eight pages cause growth attempt was failed.
+        // There is still eight pages cause growth attempt was failed
         expect(new Uint8Array(instance.exports.mem.buffer).length).toBe(8*65536);
         expect(instance.exports.getMemSize()).toBe(8);
     });

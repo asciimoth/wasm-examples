@@ -1,35 +1,35 @@
 (module
-  ;; Wasm type conversion operations follow the naming convention:
+  ;; WASM type conversion operations follow the naming convention:
   ;;  result_type.operation_source_type
-  ;; So if we a are converting type X to type Y using z conversion,
+  ;; So if we are converting type X to type Y using z conversion,
   ;;   it would be something like Y.z_X
 
-  ;; Int <-> Int converson
+  ;; Int <-> Int conversion
   ;; =====================
 
-  ;; Just drop away top half of i64 int without any cheks
-  ;; Do not care about signed or not
+  ;; Just drop away top half of i64 int without any checks
+  ;; It does not care about it being signed or not
   (func (export "i32wrapi64") (param i64) (result i32)
     (i32.wrap_i64 (local.get 0))
   )
 
-  ;; Add 4 leading bytes filled with 0
+  ;; Add 4 leading bytes filled with 0s
   (func (export "i64extendi32u") (param i32) (result i64)
     (i64.extend_i32_u (local.get 0))
   )
 
   ;; Add 4 leading bytes filled with
-  ;;   - 0 if param is positive
-  ;;   - 1 if param is negative
+  ;;   - 0s if param is positive
+  ;;   - 1s if param is negative
   (func (export "i64extendi32s") (param i32) (result i64)
     (i64.extend_i32_s (local.get 0))
   )
 
   ;; Int extension 
   ;; =============
-  ;; Extend lower bits while preserving sign (add bytes filed with 0 or 1)
+  ;; Extend lower bits while preserving the sign (add bytes filled with 0s or 1s)
   ;; These operations are among the few for which
-  ;;   unsigned versions are not available.
+  ;; the unsigned versions are not available.
 
   ;; Sign-extend i32's lower 8 bits to full 32 bits
   (func (export "i32extend8s") (param i32) (result i32)
@@ -63,14 +63,14 @@
   )
 
   ;; Demote f64 to f32
-  ;; Too big value become Inf
+  ;; Too big of a value becomes Inf
   (func (export "f32demotef64") (param f64) (result f32)
     (f32.demote_f64 (local.get 0))
   )
 
   ;; Float -> Int truncation
   ;; =======================
-  ;; Traps if param value out of range of result type or it is NaN
+  ;; Traps if param value is out of range of the result type or if it's NaN
 
   ;; Truncate f64 to signed i32
   (func (export "i32truncf64s") (param f64) (result i32)
@@ -157,7 +157,7 @@
   )
 
   ;; Convert signed i64 to f32
-  ;; May lose precision for large valuess
+  ;; May lose precision for large values
   (func (export "f32converti64s") (param i64) (result f32)
     (f32.convert_i64_s (local.get 0))
   )
@@ -194,8 +194,8 @@
 
   ;; Bit reinterpretation
   ;; ====================
-  ;; Change type "label" of value
-  ;; Leave exactly same raw bits ontop of stack without any conversions
+  ;; Changes type "label" of a value
+  ;; Leaves the exact same raw bits on top of stack without any conversions
 
   ;; Reinterpret f32's bits as i32
   (func (export "i32reinterpretf32") (param f32) (result i32)
