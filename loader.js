@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = {
-    loadwasm: async (fname, dname) => {
+    loadwasm: async (fname, dname, options = {}) => {
         const rootDir = process.cwd();
         const relativeDir = path.relative(rootDir, dname);
 
@@ -10,6 +10,6 @@ module.exports = {
         const wasmName = path.basename(fname, '-test.js') + '.wasm';
         const wasmPath = path.join(wasmDir, wasmName);
 
-        return await WebAssembly.instantiate(fs.readFileSync(wasmPath));
+        return await WebAssembly.instantiate(fs.readFileSync(wasmPath), options);
     }
 }

@@ -9,10 +9,7 @@
     - [X] drop
     - [X] v128
     - [X] select
-    - [ ] vars
-        - global
-        - local
-            - implement select (sort of) - function that get 3 args and return one of them by id from first arg
+    - [X] vars
     - [ ] functions
         - multiple return values
         - direct call
@@ -26,6 +23,10 @@
         - get mem size
         - grow
         - builtin bulk memory operations
+    - [ ] Sharing
+        - globals
+        - memory
+        - functions
     - [ ] flow control
         - if, else, end
         - return values
@@ -33,7 +34,6 @@
     - [ ] loops, blocks
         - return values
         - labels
-    - [ ] type definitions ?
     - [ ] function tables
         - sort
             - multiple comparators
@@ -42,7 +42,7 @@
         - copy
         - fill
     - [ ] fib
-    - [ ] trigomometry functions
+    - [ ] trigonometry functions
     - [ ] C-like strings
         - get length
         - copy
