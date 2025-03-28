@@ -7,7 +7,7 @@ function build() {
         rm -f "$WASM"
         echo -en "\e[1;33m[BUILD]\e[1;37m $WAT -> $WASM\e[0m"
         STATUS=0
-        BUILD_LOG="$(wat2wasm --enable-all "$WAT" -o "$WASM" 2>&1 )" || STATUS=$?
+        BUILD_LOG="$(wat2wasm --enable-threads "$WAT" -o "$WASM" 2>&1 )" || STATUS=$?
         if [[ "$STATUS" == "0" ]]; then
             echo -e "\r[\e[1;32mOK\e[0m]   "
         else

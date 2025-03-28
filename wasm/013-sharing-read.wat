@@ -1,3 +1,4 @@
+;; Example compiles only with --enable-threads flag
 (module
     (import "import" "glob" (global $glob (mut i32)))
     ;; We should mark imported memory as "shared" to allow simultaneous access
