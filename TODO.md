@@ -16,12 +16,11 @@
     - [X] flow control
     - [X] loops, blocks
     - [ ] function tables
-        - drop
-        - sort
-            - multiple comparators
-            - multiple sort algos
     - [ ] fib
     - [ ] trigonometry functions
+    - [ ] sort
+        - multiple comparators
+        - multiple sort algos
     - [ ] C-like strings
         - get length
         - copy
@@ -47,6 +46,7 @@
     - [ ] hash map
     - [ ] Extensions
         - [ ] Multi-memory
+        - [ ] Multi-table
         - [ ] Tail Calls
         - [ ] Threads
         - [ ] GC
