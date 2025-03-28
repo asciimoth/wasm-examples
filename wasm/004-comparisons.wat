@@ -1,4 +1,4 @@
-;; All examples in this file works same for i64
+;; All examples in this file work the same for i64
 (module
   ;; Equal zero
   (func (export "eqzi32") (param i32) (result i32)

@@ -34,8 +34,8 @@ describe('Functions', () => {
             },
         });
 
-        // If you call wasm function that return multiple values from JS, you
-        // get list as result.
+        // If you call WASM function that returns multiple values from JS, you
+        // get a list as a result.
         expect(instance.exports.div(5, 2)).toStrictEqual([2, 1]);
     });
 

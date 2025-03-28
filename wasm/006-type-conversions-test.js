@@ -105,8 +105,8 @@ describe('Conversion', () => {
 
     test('Float2IntTruncSat', async () => {
         const { instance } = await loader.loadwasm(__filename, __dirname);
-        // Truncation with saturation do not trap if value too big or too small
-        // Instead value clamps to max/min avalable
+        // Truncation with saturation do not trap if the value too big or too small
+        // Instead value clamps to max/min available
 
         expect(instance.exports.i32truncsatf64s(420000000000000000000.0)).toBe(2147483647);
         expect(instance.exports.i32truncsatf64s(-420000000000000000000.0)).toBe(-2147483648);

@@ -1,6 +1,6 @@
 const loader = require('../loader');
 
-describe('Comparsions', () => {
+describe('Comparisons', () => {
   test('Equal zero', async () => {
     const { instance } = await loader.loadwasm(__filename, __dirname);
 

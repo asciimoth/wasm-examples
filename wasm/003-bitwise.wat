@@ -1,19 +1,19 @@
-;; All examples in this file works same for i64
+;; All examples in this file work the same for i64
 
-;; I HIGHLY RECOMMEND to take a look at tests (003-bitwise-test.js).
+;; I HIGHLY RECOMMEND to take a look at tests (bitwise-test.js).
 ;; There are a lot of notes about bitwise math.
 (module
-  ;; Bitwiswe and gate
+  ;; Bitwise and gate
   (func (export "andi32") (param i32 i32) (result i32)
     (i32.and (local.get 0) (local.get 1))
   )
 
-  ;; Bitwiswe or gate
+  ;; Bitwise or gate
   (func (export "ori32") (param i32 i32) (result i32)
     (i32.or (local.get 0) (local.get 1))
   )
 
-  ;; Bitwiswe xor gate
+  ;; Bitwise xor gate
   (func (export "xori32") (param i32 i32) (result i32)
     (i32.xor (local.get 0) (local.get 1))
   )
@@ -47,7 +47,7 @@
     (i32.clz (local.get 0))
   )
 
-  ;; Count traling zeros
+  ;; Count trailing zeros
   (func (export "ctzi32") (param i32) (result i32)
     (i32.ctz (local.get 0))
   )

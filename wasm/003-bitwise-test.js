@@ -1,6 +1,6 @@
 const loader = require('../loader');
 
-describe('Biwise', () => {
+describe('Bitwise', () => {
   test('And', async () => {
     const { instance } = await loader.loadwasm(__filename, __dirname);
     /*
@@ -13,7 +13,7 @@ describe('Biwise', () => {
 
     /*
       Numbers in wasm are little-endian.
-      We'll talk about it more in future examples
+      We'll talk about it more in the future examples
 
       00000110 00000000 00000000 00000000
                       and
@@ -31,7 +31,7 @@ describe('Biwise', () => {
       00000000 00000000 00000000 00000000
     */
     expect(instance.exports.andi32(8, 16)).toBe(0);
-    // Order dont matter for and operation
+    // Order don't matter for and operation
     expect(instance.exports.andi32(16, 8)).toBe(0);
 
     // X and 0 = 0
@@ -140,8 +140,8 @@ describe('Biwise', () => {
 
     /*
       Xor operation is also reversible.
-      If you do it any even number of times it gets same result
-      And if you do it any odd number of times it gets (another) same result
+      If you do it any even number of times it gets the same result
+      And if you do it any odd number of times it gets the same result (other one)
 
       A xor B = C
       A xor B xor B = A
@@ -168,11 +168,11 @@ describe('Biwise', () => {
     const { instance } = await loader.loadwasm(__filename, __dirname);
 
     /*
-      When you "shifting left" number, all it bits move to next position
-      in the direction of the MORE significant.
+      When the number gets shifted left, all its bits move to the next position
+      in the direction of the MORE significant one.
 
-      It may be really confusig in little-endian representation so here is
-      example in more familiar to humans big-endian format:
+      It might be really confusing in little-endian representation so here is
+      an example in a more familiar to humans big-endian format:
       00100000 00000000 00000000 00000001
                     lsh (<-)
       01000000 00000000 00000000 00000010
@@ -181,7 +181,7 @@ describe('Biwise', () => {
                     lsh (<-)
       00000000 00000000 00000000 00001000
 
-      And same in little-endian representation:
+      And the same in little-endian representation:
       00000001 00000000 00000000 00100000
                       lsh
       00000010 00000000 00000000 01000000
@@ -190,10 +190,10 @@ describe('Biwise', () => {
                       lsh
       00001000 00000000 00000000 00000000
 
-      Note that righter bit in most significant byte become lost after left shift
+      Note that the rightest bit in the most significant byte becomes lost after left shift
     */
 
-    // You may note that left shifting and multiplication per 2 is a same thing
+    // You may notice that left shifting and multiplication per 2 is the same thing
     expect(instance.exports.shli32(1, 1)).toBe(2);
     expect(instance.exports.shli32(1, 2)).toBe(4);
     expect(instance.exports.shli32(1, instance.exports.shli32(1, 1))).toBe(4);
@@ -202,7 +202,7 @@ describe('Biwise', () => {
     expect(instance.exports.shli32(7, 2)).toBe(28); // 7 * (2*2)
     expect(instance.exports.shli32(7, 3)).toBe(56); // 7 * (2*3)
 
-    // Left shift independent from integer sign (unlike right shift)
+    // Left shift is independent from the integer sign (unlike right shift)
     expect(instance.exports.shli32(3, 2)).toBe(12);
     expect(instance.exports.shli32(-3, 2)).toBe(-12);
   });
@@ -210,8 +210,8 @@ describe('Biwise', () => {
   test('Shift right', async () => {
     const { instance } = await loader.loadwasm(__filename, __dirname);
     /*
-      When you "shifting left" number, all it bits move to next position
-      in the direction of the LESS significant.
+      When you are shifting the number left, all its bits move to the next position
+      in the direction of the LESS significant one.
       So it's like division by two with losing modulo
     */
     expect(instance.exports.shrui32(4, 1)).toBe(2);
@@ -228,16 +228,16 @@ describe('Biwise', () => {
     */
     expect(instance.exports.shrui32(-4, 1)).toBe(2147483646);
     /*
-      Looks weird. Thats because right shift should be done different for
+      Looks weird. Thats because right shift should be done differently for
       signed and unsigned numbers.
-      If we are shifting unsigned number, we are just moving all bits and adding
+      If we are shifting an unsigned number, we are just moving all bits and adding
       leading zero bit.
-      But if we are shifting signed one, we shoud chek if it is positive or
-      negative and add leading 0 or 1 respectively.
+      But if we are shifting a signed one, we should check if it is positive or
+      negative and add a leading 0 or 1 respectively.
       So wasm has two operations: shr_u and shr_s.
     */
 
-    // And since JS use signed ints always, we should use shr_s variant:
+    // And since JS always uses signed ints, we should use the shr_s variant:
     expect(instance.exports.shrsi32(4, 1)).toBe(2);
     expect(instance.exports.shrsi32(-4, 1)).toBe(-2);
 
@@ -248,9 +248,9 @@ describe('Biwise', () => {
   test('Rotate', async () => {
     const { instance } = await loader.loadwasm(__filename, __dirname);
     /*
-      Rotation is like shifting but all bits moved beyond the edge, appears
+      Rotation is like shifting but all the bits that are moved beyond the edge, appear
       from the opposite one:
-      (yeat agein big endian format)
+      (yet again big endian format)
       10100000 00000000 00000000 00000101
                     rotl <<
       01000000 00000000 00000000 00001011
@@ -280,8 +280,8 @@ describe('Biwise', () => {
   test('Count zeros', async () => {
     const { instance } = await loader.loadwasm(__filename, __dirname);
     /*
-      Clz (count leading zeros) and ctz (count traling zeros) operations
-      count zero bits at the begining and end of integer:
+      Clz (count leading zeros) and ctz (count trailing zeros) operations
+      count zero bits at the beginning and the end of integer:
       (big endian)
       00000000 00000010 00000001 00000000
       \_____________/            \______/
@@ -302,9 +302,9 @@ describe('Biwise', () => {
   });
 
   /*
-    You may be interested why there is no builtin bitwise not operation.
+    You may be interested why there is no built-in bitwise not operation.
     Thats because you can implement bitwise inversion using xor.
-    Cause xoring bit with 1 return this bit inverted.
+    Cause xoring a bit with 1 returns this bit inverted.
 
     0     1   1
     1     1   0
