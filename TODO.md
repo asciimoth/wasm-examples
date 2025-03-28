@@ -15,7 +15,7 @@
     - [X] Sharing
     - [X] flow control
     - [X] loops, blocks
-    - [ ] function tables
+    - [X] function tables
     - [ ] fib
     - [ ] trigonometry functions
     - [ ] sort
