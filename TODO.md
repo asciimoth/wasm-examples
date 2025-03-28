@@ -14,12 +14,7 @@
     - [X] memory
     - [X] Sharing
     - [X] flow control
-    - [ ] loops, blocks
-        - return values
-        - labels
-        - hand-written memory ops
-            - copy
-            - fill
+    - [X] loops, blocks
     - [ ] function tables
         - drop
         - sort
