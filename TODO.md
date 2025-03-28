@@ -16,7 +16,7 @@
     - [X] flow control
     - [X] loops, blocks
     - [X] function tables
-    - [ ] fib
+    - [X] fib
     - [ ] trigonometry functions
     - [ ] sort
         - multiple comparators
