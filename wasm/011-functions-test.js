@@ -59,4 +59,14 @@ describe('Functions', () => {
         expect(instance.exports.add(5, 2)).toStrictEqual(7);
         expect(instance.exports.sub(5, 2)).toStrictEqual(3);
     });
+
+    test('const', async () => {
+        const { instance } = await loader.loadwasm(__filename, __dirname, {
+            import: {
+                seti32: () => {},
+            },
+        });
+
+        expect(instance.exports.const()).toStrictEqual(42);
+    });
 });

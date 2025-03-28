@@ -47,6 +47,13 @@
         (call $seti32 (local.get 0))
     )
 
+    (func (export "const") (result i32)
+        ;; There is also `return` instruction but it's not so much usefull
+        ;; until we take a look at flow control constructions
+        (return (i32.const 42))
+        i32.const 69
+    )
+
     (func $initfunc
         i32.const 42
         global.set $global
