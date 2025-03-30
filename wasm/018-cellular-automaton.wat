@@ -124,7 +124,7 @@
     )
 
     ;; 0 -> " "
-    ;; 1 -> "#"
+    ;; 1 -> "+"
     (func $toChar (export "toChar") (param i32) (result i32)
         (i32.add (i32.const 32) (i32.mul (i32.const 11) (local.get 0)))
     )
