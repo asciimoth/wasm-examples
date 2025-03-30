@@ -17,6 +17,7 @@
     - [X] loops, blocks
     - [X] function tables
     - [X] fib
+    - [X] cellular automaton
     - [ ] trigonometry functions
     - [ ] sort
         - multiple comparators
