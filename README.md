@@ -28,6 +28,8 @@ wasm-wasi/run wasm-wasi/hello-world
 [WASM Semantics](https://webassembly.github.io/spec/core/exec/index.html)  
 [Index of instructions](https://webassembly.github.io/spec/core/appendix/index-instructions.html)  
 
+[WASM Opcodes table](https://pengowray.github.io/wasm-ops/)
+
 MDN:
 - [WASM Concepts](https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts)
 - [Understanding WAT](https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Understanding_the_text_format)
