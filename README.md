@@ -43,7 +43,9 @@ MDN:
 - [preview1](https://github.com/WebAssembly/WASI/blob/main/legacy/preview1/docs.md) docs
   
 [awesome-wasm-tools collection](https://github.com/vshymanskyy/awesome-wasm-tools)
-  
+
+[webassemblyjs](https://github.com/xtuc/webassemblyjs) - WASM related stuff for JS
+
 A complete novice writes Wasm by hand series:
 - [Parsing Numbers](https://burgers.io/complete-novice-wasm-parsing-numbers)
 - [Adding an Allocator](https://burgers.io/complete-novice-wasm-allocator)
