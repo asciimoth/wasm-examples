@@ -22,6 +22,7 @@
     - [ ] sort
         - multiple comparators
         - multiple sort algos
+    - [ ] random
     - [ ] C-like strings
         - get length
         - copy
