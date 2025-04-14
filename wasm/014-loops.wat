@@ -1,3 +1,4 @@
+;; TODO: Add br_table example
 (module
     (import "import" "addResult" (func $addResult (param i32)))
     (memory (export "mem") 1)
