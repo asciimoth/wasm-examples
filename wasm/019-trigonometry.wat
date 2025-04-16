@@ -146,7 +146,7 @@
         local.get $result
     )
 
-    ;; cos(x) = 1 - (x^2)/2! + (x^4)/4! - (x^6)/6! - (x^8)/8! + ...
+    ;; cos(x) = 1 + (x^2)/2! - (x^4)/4! + (x^6)/6! - (x^8)/8! + ...
     (func $rawCos (param $x f64) (result f64)
         (local $result f64)
         (local $step i32)
