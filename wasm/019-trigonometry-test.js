@@ -1,6 +1,6 @@
 const loader = require('../loader');
 
-describe('CA', () => {
+describe('Trigonometry', () => {
     test('pow', async () => {
         const { instance } = await loader.loadwasm(__filename, __dirname);
         expect(instance.exports.pow(2, 2)).toBe(4);
