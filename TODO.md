@@ -18,7 +18,7 @@
     - [X] function tables
     - [X] fib
     - [X] cellular automaton
-    - [ ] trigonometry functions
+    - [X] trigonometry functions
     - [ ] sort
         - multiple comparators
         - multiple sort algos
