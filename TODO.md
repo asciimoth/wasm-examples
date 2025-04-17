@@ -19,9 +19,7 @@
     - [X] fib
     - [X] cellular automaton
     - [X] trigonometry functions
-    - [ ] sort
-        - multiple comparators
-        - multiple sort algos
+    - [X] sort
     - [ ] random
     - [ ] C-like strings
         - get length
