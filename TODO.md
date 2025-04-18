@@ -20,7 +20,7 @@
     - [X] cellular automaton
     - [X] trigonometry functions
     - [X] sort
-    - [ ] random
+    - [X] random
     - [ ] C-like strings
         - get length
         - copy
