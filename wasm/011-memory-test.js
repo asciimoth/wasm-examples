@@ -66,6 +66,19 @@ describe('Memory', () => {
         expect(instance.exports.load8ui32(301)).toBe(0xCD);
         expect(instance.exports.load8ui32(302)).toBe(0xAB);
         expect(instance.exports.load8ui32(303)).toBe(0x00);
+
+        expect(instance.exports.load8ui32(65536-1)).toBe(0);
+        expect(() => {instance.exports.load8ui32(65536)})
+            .toThrow("memory access out of bounds");
+        expect(instance.exports.loadi32(65536-4)).toBe(0);
+        expect(() => {instance.exports.loadi32(65536-3)})
+            .toThrow("memory access out of bounds");
+        expect(() => {instance.exports.loadi32(65536-2)})
+            .toThrow("memory access out of bounds");
+        expect(() => {instance.exports.loadi32(65536-1)})
+            .toThrow("memory access out of bounds");
+        expect(() => {instance.exports.loadi32(65536)})
+            .toThrow("memory access out of bounds");
     });
 
     test('MemSize', async () => {
