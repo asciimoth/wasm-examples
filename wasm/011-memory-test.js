@@ -88,6 +88,9 @@ describe('Memory', () => {
         expect(new Uint8Array(instance.exports.mem.buffer).length).toBe(1*65536);
         expect(instance.exports.getMemSize()).toBe(1);
 
+        // Request zero more pages
+        expect(instance.exports.growMem(0)).toBe(1)
+
         // Request two more pages
         expect(instance.exports.growMem(2)).toBe(1)
 
