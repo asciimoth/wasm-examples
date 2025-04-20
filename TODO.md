@@ -21,6 +21,29 @@
     - [X] trigonometry functions
     - [X] sort
     - [X] random
+    - [ ] basic allocator
+    - [ ] more allocators
+        - proxy
+        - logger
+        - arena
+    - [ ] vector
+        - new
+        - push-i32
+        - push-i64
+        - push-f32
+        - push-f64
+        - push-slice
+        - push-vec
+    - [ ] list / queue
+    - [ ] double linked list / dequeue
+    - [ ] Shadow stack
+        - deque of fixed-width slices with stack interface
+    - [ ] strings (vector based)
+        - lower
+        - upper
+        - reverse
+        - iteration over rows
+        - iteration over words
     - [ ] C-like strings
         - get length
         - copy
@@ -30,20 +53,15 @@
         - reverse
         - iteration over rows
         - iteration over words
+    - [ ] some simple hash calc (md5 ?)
+    - [ ] hash map
     - [ ] json pretty print
     - [ ] parse and format ints
     - [ ] parse and format floats
     - [ ] hex
     - [ ] base32
     - [ ] base64
-    - [ ] some simple hash calc (md5 ?)
-    - [ ] allocators
-        - bump
-        - arena
-        - etc
-    - [ ] list / queue
-    - [ ] double linked list / dequeue
-    - [ ] hash map
+    - [ ] hand made GC
     - [ ] Extensions
         - [ ] Multi-memory
         - [ ] Multi-table
