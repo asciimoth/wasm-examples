@@ -32,10 +32,8 @@
     )
 
     (;
-        init(begin end) -> point
-        alloc(point size) -> begin flag
-        free(point begin)
         defragment(point)
+        free(point begin)
         realloc(point begin) -> newBegin
     ;)
 
@@ -133,6 +131,7 @@
             (i32.add (local.get $newSeg) (i32.const 1))
             (i32.load (i32.add (local.get $segment) (i32.const 1)))
         )
+        (call $markSegmentFree (local.get $newSeg))
         ;; "Connect" current segment with new segment
         (i32.store
             (i32.add (local.get $segment) (i32.const 1))
@@ -163,46 +162,89 @@
         )
     )
 
-    ;; (func $alloc (export "alloc")
-    ;;     (param $allocator i32) (param $size i32) (result i32 i32)
-    ;;     (local $end i32)
-    ;;     (local $next i32)
-    ;;     (local $serSize i32)
-    ;;     (local.set $end (i32.load (local.get $allocator)))
-    ;;     (local.set $allocator (i32.add (local.get $allocator) (i32.const 4)))
-    ;;     (loop $loop
-    ;;         ;; If segment is free
-    ;;         (if (i32.eqz (i32.load8_u (local.get $allocator)))
-    ;;             (then
-    ;;                 ;; Get next segment
-    ;;                 (local.set $next
-    ;;                     (i32.load (i32.add (local.get $allocator) (i32.const 1)))
-    ;;                 )
-    ;;                 ;; Get current segment size
-    ;;                 ;; May be 0 if fragmentation is too bad
-    ;;                 (local.set $segSize (i32.sub
-    ;;                     (local.get $next)
-    ;;                     (i32.add (local.get $allocator) (i32.const 5))
-    ;;                 ))
-    ;;                 (;
-    ;;                     if $segSize < $size
-    ;;                         if $next >= $end
-    ;;                             ;; No sutable segment found
-    ;;                             ;; Failed to allocate memory
-    ;;                             return 0 0
-    ;;                         continue
-    ;;                 ;)
-    ;;                 (;
-    ;;                     if $segSize+5 > $size
-    ;;                         ;; Split segment
-    ;;                     else
-    ;;                         fitMemSize($next)
-    ;;                         ;; mark current segment as used
-    ;;                         (i32.store8 (i32.add (local.get $begin) (i32.const 4)) (i32.const 1))
-    ;;                         return ($allocator+5) 0
-    ;;                 ;)
-    ;;             )
-    ;;         )
-    ;;     )
-    ;; )
+    ;; first result - allocated slice pointer
+    ;; second result - status code
+    ;;   1 - ok
+    ;;   0 - failed
+    (func $alloc (export "alloc")
+        (param $allocator i32) (param $size i32) (result i32 i32)
+        (local $segment i32)
+        (local.set $segment (i32.add (local.get $allocator) (i32.const 4)))
+        (loop $loop
+            (if
+                (call $splitSegmentIfNeeded
+                    (local.get $segment)
+                    (local.get $size)
+                )
+                (then
+                    (call $markSegmentUsed (local.get $segment))
+                    (call $fitMemSize
+                        (i32.add
+                            (i32.add (local.get $segment) (i32.const 5))
+                            (local.get $size)
+                        )
+                    )
+                    (return
+                        (i32.add (local.get $segment) (i32.const 5))
+                        (i32.const 1)
+                    )
+                )
+            )
+            (if
+                (call $isLastSegment
+                    (local.get $allocator)
+                    (local.get $segment)
+                )
+                (then (return (i32.const 0) (i32.const 0)))
+            )
+            (local.set $segment (call $getNextSegment (local.get $segment)))
+            (br $loop)
+        )
+        (i32.const 0) (i32.const 0)
+    )
+
+    (func $defragment (param $allocator i32)
+        (local $segment i32)
+        (local.set $segment (i32.add (local.get $allocator) (i32.const 4)))
+        (loop $loop
+            (call $joinSegments
+                (local.get $allocator) (local.get $segment)
+            )
+            (if
+                (call $isLastSegment
+                    (local.get $allocator)
+                    (local.get $segment)
+                )
+                (then return)
+            )
+            (local.set $segment (call $getNextSegment (local.get $segment)))
+            (br $loop)
+        )
+    )
+
+    (func $free (export "free")
+        (param $allocator i32) (param $segment i32)
+        (call $markSegmentFree (i32.sub (local.get $segment) (i32.const 5)))
+        (call $defragment (local.get $allocator))
+    )
+
+    (func $realloc (export "realloc")
+        (param $allocator i32) (param $segment i32) (result i32)
+        (local $size i32)
+        (local $new i32)
+        (local.set $size (call $getSegmentSize
+            (i32.sub (local.get $segment) (i32.const 5))
+        ))
+        (call $alloc (local.get $allocator) (local.get $size) )
+        ;; Failed to allocate new segment
+        (if (i32.eqz)
+            (then (return (local.get $segment)))
+        )
+        (local.set $new)
+        (memory.copy
+            (local.get $new) (local.get $segment) (local.get $size)
+        )
+        (call $free (local.get $allocator) (local.get $segment))
+        (local.get $new)
+    )
 )

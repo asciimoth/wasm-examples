@@ -21,7 +21,7 @@
     - [X] trigonometry functions
     - [X] sort
     - [X] random
-    - [ ] basic allocator
+    - [X] basic allocator
     - [ ] more allocators
         - proxy
         - logger

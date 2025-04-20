@@ -168,11 +168,99 @@ describe('Basic allocator', () => {
             segments: [
                 {
                     begin: begin+4,
-                    next: begin+9,
                     next: end,
                     status: "free",
                 },
             ],
-        })
+        });
+    });
+    test('Allocation', async () => {
+        const { instance } = await loader.loadwasm(__filename, __dirname);
+        const begin = page*2;
+        const end = page*3;
+        expect(instance.exports.init(begin, end)).toBe(begin);
+        expect(instance.exports.alloc(begin, 31)).toStrictEqual([begin+9,1]);
+        expect(instance.exports.alloc(begin, 17)).toStrictEqual([begin+9+31+5,1]);
+        instance.exports.markSegmentFree(begin+4);
+        expect(instance.exports.alloc(begin, 17)).toStrictEqual([begin+9,1]);
+        expect(instance.exports.alloc(begin, 137))
+            .toStrictEqual([begin+9+31+5+17+5,1]);
+        expect(
+            dumpAllocatorStructure(instance.exports.memory, begin)
+        ).toStrictEqual({
+            begin: begin,
+            end: end,
+            segments: [
+                {
+                    begin: begin+4,
+                    next: begin+9+17,
+                    status: "in use",
+                },
+                {
+                    begin: begin+9+17,
+                    next: begin+9+31,
+                    status: "free",
+                },
+                {
+                    begin: begin+9+31,
+                    next: begin+9+31+5+17,
+                    status: "in use",
+                },
+                {
+                    begin: begin+9+31+5+17,
+                    next: begin+9+31+5+17+5+137,
+                    status: "in use",
+                },
+                {
+                    begin: begin+9+31+5+17+5+137,
+                    next: end,
+                    status: "free",
+                },
+            ],
+        });
+    });
+    test('Defragmentation', async () => {
+        const { instance } = await loader.loadwasm(__filename, __dirname);
+        const begin = 137;
+        const end = begin + 44;
+        const alloc = instance.exports.init(begin, end);
+        let a = instance.exports.alloc(alloc, 5)[0];
+        let b = instance.exports.alloc(alloc, 5)[0];
+        let c = instance.exports.alloc(alloc, 5)[0];
+        let d = instance.exports.alloc(alloc, 5)[0];
+        instance.exports.free(alloc, a);
+        instance.exports.free(alloc, c);
+        expect(b).toBe(alloc+19);
+        b = instance.exports.realloc(alloc, b);
+        d = instance.exports.realloc(alloc, d);
+        instance.exports.alloc(alloc, 6);
+        expect(
+            dumpAllocatorStructure(instance.exports.memory, begin)
+        ).toStrictEqual({
+            begin: alloc,
+            end: end,
+            segments: [
+                {
+                    begin: alloc+4,
+                    next: alloc+14,
+                    status: "in use",
+                },
+                {
+                    begin: alloc+14,
+                    next: alloc+24,
+                    status: "in use",
+                },
+                {
+                    begin: alloc+24,
+                    next: alloc+35,
+                    status: "in use",
+                },
+                {
+                    begin: alloc+35,
+                    next: end,
+                    status: "free",
+                },
+            ],
+        });
     });
 });
